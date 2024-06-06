@@ -35,47 +35,7 @@
     </div>
 
     <!-- Navigation -->
-    <div class="navbar navbar-custom" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <i class="ion-navicon"></i>
-                </button>
-                <a class="navbar-brand logo" href="index.html">
-                    <i class="ion-social-buffer"></i>
-                    <span>Lugada</span>
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ms-auto navbar-center" id="mySidenav">
-                    <li class="nav-item">
-                        <a href="#features" class="nav-link">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#services" class="nav-link">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#screenshots" class="nav-link">Screenshots</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#pricing" class="nav-link">Pricing</a>
-                    </li>
-                    <li class="dropdown nav-item">
-                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pages <i class="ion-chevron-down-outline"></i>
-                        </a>
-                        <ul class="dropdown-menu arrow dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
-                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                            <li><a class="dropdown-item" href="blog-post.html">Blog-Post</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+
     @yield('content')
     <!-- Include JavaScript Files -->
 
