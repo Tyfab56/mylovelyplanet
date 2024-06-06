@@ -64,7 +64,7 @@
             </div>
         </div>
     </div>
-    yield('content')
+    @yield('content')
     <!-- Include JavaScript Files -->
 
     <!-- animated js -->
