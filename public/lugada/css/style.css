@@ -1417,3 +1417,8 @@ figure.custom-blockquote {
 .w500 {
     width: 500px;
 }
+
+.py-card {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}

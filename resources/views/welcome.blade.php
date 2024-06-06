@@ -14,7 +14,7 @@
             </div>
         </div>
 </section>
-<section class="py-28">
+<section class="py-card">
     <div class="container">
         <div class="max-w-md  mx-auto text-center">
             <h2 class="text-3xl font-bold">Blog Section 6</h2>

@@ -19,6 +19,7 @@
     <!-- Basic link -->
     <link rel="stylesheet" href="{{ asset('lugada/css/bootstrap.min.css') }}" type="text/css" />
     <link rel="stylesheet" type="text/css" href="{{ asset('lugada/css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('lugada/css/tailwind.css') }}" />
 </head>
 
 <body>
