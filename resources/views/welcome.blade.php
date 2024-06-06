@@ -7,12 +7,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Lovely Planet</title>
-    <!-- Include CSS Files -->
-    <link href="{{ asset('lugada/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('lugada/css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('lugada/css/magnific-popup.css') }}" rel="stylesheet">
-    <link href="{{ asset('lugada/css/ionicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('lugada/css/style.css') }}" rel="stylesheet">
+
+
+     <!-- Light-box -->
+     <link rel="stylesheet" href="{{ asset('lugada/css/mklb.css') }}" type="text/css" />
+
+<!-- Animate -->
+<link href="{{ asset('lugada/css/animate.css') }}" rel="stylesheet" />
+
+<!-- Icon-font -->
+<link rel="stylesheet" type="text/css" href="{{ asset('lugada/css/ionicons.min.css') }}">
+
+<!-- Basic link -->
+<link rel="stylesheet" href="{{ asset('lugada/css/bootstrap.min.css') }}" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{{ asset('lugada/css/style.css') }}" />
 </head>
 
 <body>
@@ -60,14 +68,14 @@
     </div>
 
     <!-- Include JavaScript Files -->
-    <script src="{{ asset('lugada/js/jquery.js') }}"></script>
-    <script src="{{ asset('lugada/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('lugada/js/jquery.easing.1.3.min.js') }}"></script>
-    <script src="{{ asset('lugada/js/SmoothScroll.js') }}"></script>
+
+    <!-- animated js -->
     <script src="{{ asset('lugada/js/wow.min.js') }}"></script>
-    <script src="{{ asset('lugada/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('lugada/js/jquery.countdown.js') }}"></script>
-    <script src="{{ asset('lugada/js/jquery.app.js') }}"></script>
+    <!-- Light-box -->
+    <script src="{{ asset('lugada/js/mklb.js') }}"></script>
+    <!-- Counter -->
+    <script src="{{ asset('lugada/js/counter.init.js') }}"></script>
+    <script src="{{ asset('lugada/js/app.js') }}"></script>
 </body>
 
 </html>
