@@ -5,7 +5,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-9 text-center">
                 <div class="px-md-2">
-                    <h2 class="text-white fw-bold f-36 mt-3 pb-2 animated fadeInDown wow" data-wow-delay=".1s">Professional Landing Page Template</h2>
+                    <img src="{{ asset('lugada/images/logosquare.png') }}">
+                    <h2 class="text-white fw-bold f-36 mt-3 pb-2 animated fadeInDown wow" data-wow-delay=".1s">Explorez le monde avec My Lovely Planet</h2>
                     <p class="text-white f-16 mb-5 mt-4 animated fadeInDown wow" data-wow-delay=".2s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat arcu ut orci porta, eget porttitor felis suscipit. Sed a nisl ullamcorper, tempus augue at, rutrum lacus. Duis et turpis eros.</p>
                     <a href="javascript:void(0);" class="btn btn-primary rounded-pill animated fadeInDown wow" data-wow-delay=".4s">Learn more</a>
 
