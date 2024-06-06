@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-<section class="hero bg-custom-dark">
+<section class="bg-custom-dark">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-9 text-center">
