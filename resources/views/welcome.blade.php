@@ -9,18 +9,18 @@
     <title>My Lovely Planet</title>
 
 
-     <!-- Light-box -->
-     <link rel="stylesheet" href="{{ asset('lugada/css/mklb.css') }}" type="text/css" />
+    <!-- Light-box -->
+    <link rel="stylesheet" href="{{ asset('lugada/css/mklb.css') }}" type="text/css" />
 
-<!-- Animate -->
-<link href="{{ asset('lugada/css/animate.css') }}" rel="stylesheet" />
+    <!-- Animate -->
+    <link href="{{ asset('lugada/css/animate.css') }}" rel="stylesheet" />
 
-<!-- Icon-font -->
-<link rel="stylesheet" type="text/css" href="{{ asset('lugada/css/ionicons.min.css') }}">
+    <!-- Icon-font -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('lugada/css/ionicons.min.css') }}">
 
-<!-- Basic link -->
-<link rel="stylesheet" href="{{ asset('lugada/css/bootstrap.min.css') }}" type="text/css" />
-<link rel="stylesheet" type="text/css" href="{{ asset('lugada/css/style.css') }}" />
+    <!-- Basic link -->
+    <link rel="stylesheet" href="{{ asset('lugada/css/bootstrap.min.css') }}" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('lugada/css/style.css') }}" />
 </head>
 
 <body>
