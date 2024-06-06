@@ -4,12 +4,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-9 text-center">
-                <div class="px-md-2">
+                <div class="d-flex flex-column align-items-center px-md-2 text-center">
                     <img class="w500" src="{{ asset('lugada/images/logosquare.png') }}">
-                    <h2 class="text-white fw-bold f-36 mt-3 pb-2 animated fadeInDown wow" data-wow-delay=".1s">Explorez le monde avec My Lovely Planet</h2>
-                    <p class="text-white f-16 mb-5 mt-4 animated fadeInDown wow" data-wow-delay=".2s">Nous concevons des outils pour explorer la planète : cartes interactives, audioguides, exposition en Réalitée Augmentée, prises de vues 360°, outils d'assistance aux photographes </p>
-
-
+                    <h2 class="text-white fw-bold f-36 mt-3 pb-2 animated fadeInDown wow" data-wow-delay=".1s">
+                        Explorez le monde avec My Lovely Planet
+                    </h2>
+                    <p class="text-white f-16 mb-5 mt-4 animated fadeInDown wow" data-wow-delay=".2s">
+                        Nous concevons des outils pour explorer la planète : cartes interactives, audioguides, exposition en Réalité Augmentée, prises de vues 360°, outils d'assistance aux photographes
+                    </p>
                 </div>
             </div>
         </div>
