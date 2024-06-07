@@ -32,8 +32,8 @@
                         <img src="assets/images/user/bg-msm.jpg" class="h-10 w-10 rounded-full" alt="">
                     </div>
                     <div>
-                        <h4 class="text-gray-800">Jhon catla</h4>
-                        <h5 class="text-gray-500">15-12-2023</h5>
+                        <h4 class="text-gray-800">Islande, Comores, Réunion,...</h4>
+                        <h5 class="text-gray-500">qsfqfqfd</h5>
                     </div>
                 </div>
                 <p class="text-base font-semibold text-gray-500 mt-5">Un outil pour découvrir les plus beaux sites et activités d'une selection de destinations</p>
