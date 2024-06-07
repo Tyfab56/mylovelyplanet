@@ -27,15 +27,15 @@
             <div class="p-6 rounded-lg bg-card">
 
                 <h2 class="text-xl font-bold">Site Internet : My Secret Map</h2>
-                <div class="flex items-center gap-3 mt-2 mb-2">
+                <div class="flex items-center gap-3 mt-3 mb-3">
 
                     <div>
-                        <h4 class="text-gray-800">Chaque année de nouvelles destinations</h4>
+                        <h5 class="text-gray-800">Chaque année de nouvelles destinations</h5>
                         <h5 class="text-gray-500">Islande, Comores, Réunion,...</h5>
                     </div>
                 </div>
                 <img src="/web/images/bg-msm.jpg" class="rounded-lg" alt="">
-                <p class="text-base font-semibold text-gray-500 mt-5">Un outil pour découvrir les plus beaux sites et activités d'une selection de destinations</p>
+                <p class="text-base font-semibold text-gray-500 mt-2">Un outil pour découvrir les plus beaux sites et activités d'une selection de destinations</p>
                 <div class="inline-block mt-6">
                     <a href="https://www.mysecretmap.com" target="_blank" class="py-2 px-6 rounded-full flex items-center gap-2 font-medium text-white bg-blue-500/90 hover:bg-blue-500 transition-all duration-500">
                         Voir le site
