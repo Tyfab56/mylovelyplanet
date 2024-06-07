@@ -29,7 +29,7 @@
                 <h2 class="text-xl font-bold mt-5">My Secret Map</h2>
                 <div class="flex items-center gap-3 mt-4">
                     <div>
-                        <img src="assets/images/user/img-1.jpg" class="h-10 w-10 rounded-full" alt="">
+                        <img src="assets/images/user/bg-msm.jpg" class="h-10 w-10 rounded-full" alt="">
                     </div>
                     <div>
                         <h4 class="text-gray-800">Jhon catla</h4>
