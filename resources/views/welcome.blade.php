@@ -24,8 +24,8 @@
         </div>
 
         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-14">
-            <div class="p-6 rounded-lg bg-white">
-               
+            <div class="p-6 rounded-lg bg-card">
+
                 <h2 class="text-xl font-bold mt-5">My Secret Map</h2>
                 <div class="flex items-center gap-3 mt-4">
 
