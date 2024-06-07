@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-9 text-center">
                 <div class="d-flex flex-column align-items-center px-md-2 text-center">
-                    <img class="w500" src="{{ asset('lugada/images/logosquare.png') }}">
+                    <img class="w500" src="{{ asset('web/images/logosquare.png') }}">
                     <h2 class="text-white fw-bold f-36 mt-3 pb-2 animated fadeInDown wow" data-wow-delay=".1s">
                         Explorez le monde avec My Lovely Planet
                     </h2>
@@ -16,7 +16,7 @@
             </div>
         </div>
 </section>
-<section class="relative py-28 bg-cover bg-no-repeat" style="background-image:url({{ asset('lugada/images/blog-bg-1.png') }})">
+<section class="relative py-28 bg-cover bg-no-repeat" style="background-image:url({{ asset('web/images/blog-bg-1.png') }})">
     <div class="container">
         <div class="max-w-md  mx-auto text-center">
             <h2 class="text-3xl font-bold">Découvrez nos sites</h2>
@@ -25,7 +25,7 @@
 
         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-14">
             <div class="p-6 rounded-lg bg-white">
-                <img src="assets/images/bg-msm.jpg" class="rounded-lg" alt="">
+                <img src="/web/images/bg-msm.jpg" class="rounded-lg" alt="">
                 <h2 class="text-xl font-bold mt-5">My Secret Map</h2>
                 <div class="flex items-center gap-3 mt-4">
 

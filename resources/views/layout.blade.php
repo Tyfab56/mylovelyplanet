@@ -8,18 +8,18 @@
 
 
     <!-- Light-box -->
-    <link rel="stylesheet" href="{{ asset('lugada/css/mklb.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('web/css/mklb.css') }}" type="text/css" />
 
     <!-- Animate -->
-    <link href="{{ asset('lugada/css/animate.css') }}" rel="stylesheet" />
+    <link href="{{ asset('web/css/animate.css') }}" rel="stylesheet" />
 
     <!-- Icon-font -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('lugada/css/ionicons.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('web/css/ionicons.min.css') }}">
 
     <!-- Basic link -->
-    <link rel="stylesheet" href="{{ asset('lugada/css/bootstrap.min.css') }}" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('lugada/css/style.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('lugada/css/tailwind.css') }}" />
+    <link rel="stylesheet" href="{{ asset('web/css/bootstrap.min.css') }}" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('web/css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('web/css/tailwind.css') }}" />
 </head>
 
 <body>
@@ -30,7 +30,7 @@
         <div class="col-md-12">
             <div class="top-container">
                 <!-- Logo -->
-                <a href="#" class="logo" title="Home"><img src="{{ asset('lugada/img/logo.png') }}" alt=""></a>
+                <a href="#" class="logo" title="Home"><img src="{{ asset('web/img/logo.png') }}" alt=""></a>
             </div>
         </div>
     </div>
@@ -41,12 +41,12 @@
     <!-- Include JavaScript Files -->
 
     <!-- animated js -->
-    <script src="{{ asset('lugada/js/wow.min.js') }}"></script>
+    <script src="{{ asset('web/js/wow.min.js') }}"></script>
     <!-- Light-box -->
-    <script src="{{ asset('lugada/js/mklb.js') }}"></script>
+    <script src="{{ asset('web/js/mklb.js') }}"></script>
     <!-- Counter -->
-    <script src="{{ asset('lugada/js/counter.init.js') }}"></script>
-    <script src="{{ asset('lugada/js/app.js') }}"></script>
+    <script src="{{ asset('web/js/counter.init.js') }}"></script>
+    <script src="{{ asset('web/js/app.js') }}"></script>
 </body>
 
 </html>

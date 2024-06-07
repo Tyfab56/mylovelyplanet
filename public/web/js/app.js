@@ -1,17 +1,19 @@
-/* Theme Name: Lugada - Responsive bootsrap 4 Landing Page Template
+/* Theme Name: web - Responsive bootsrap 4 Landing Page Template
    Author: Techzaa
    Version: 1.0.0
    Created: May 2018
    File Description: Main Js file of the template
 */
 
-
 // Sticky Navbar
 
 function windowScroll() {
     const navbar = document.getElementById("navbar-sticky");
     if (navbar) {
-        if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
+        if (
+            document.body.scrollTop >= 50 ||
+            document.documentElement.scrollTop >= 50
+        ) {
             navbar.classList.add("nav-sticky");
         } else {
             navbar.classList.remove("nav-sticky");
@@ -24,8 +26,7 @@ window.addEventListener("scroll", (ev) => {
     windowScroll();
 });
 
-
-if(window['WOW']){
+if (window["WOW"]) {
     new WOW().init();
     wow = new WOW({
         boxClass: "wow",
@@ -37,7 +38,6 @@ if(window['WOW']){
     wow.init();
 }
 
-
 // Contact form
 
 function validateForm() {
@@ -48,22 +48,26 @@ function validateForm() {
     document.getElementById("error-msg").style.opacity = 0;
     document.getElementById("error-msg").innerHTML = "";
     if (name == "" || name == null) {
-        document.getElementById("error-msg").innerHTML = "<div class='alert alert-danger error_message text-center'>Please enter a Name</div>";
+        document.getElementById("error-msg").innerHTML =
+            "<div class='alert alert-danger error_message text-center'>Please enter a Name</div>";
         fadeIn();
         return false;
     }
     if (email == "" || email == null) {
-        document.getElementById("error-msg").innerHTML = "<div class='alert alert-danger error_message text-center'>Please enter a Email</div>";
+        document.getElementById("error-msg").innerHTML =
+            "<div class='alert alert-danger error_message text-center'>Please enter a Email</div>";
         fadeIn();
         return false;
     }
     if (subject == "" || subject == null) {
-        document.getElementById("error-msg").innerHTML = "<div class='alert alert-danger error_message text-center'>Please enter a Subject</div>";
+        document.getElementById("error-msg").innerHTML =
+            "<div class='alert alert-danger error_message text-center'>Please enter a Subject</div>";
         fadeIn();
         return false;
     }
     if (comments == "" || comments == null) {
-        document.getElementById("error-msg").innerHTML = "<div class='alert alert-danger error_message text-center'>Please enter a Comments</div>";
+        document.getElementById("error-msg").innerHTML =
+            "<div class='alert alert-danger error_message text-center'>Please enter a Comments</div>";
         fadeIn();
         return false;
     }
@@ -97,22 +101,20 @@ function fadeIn() {
     }, 200);
 }
 
-
 // // Preloader
 
 function preloader() {
     setTimeout(() => {
         console.log("working");
-        if(document.getElementsByClassName('preloader').length>0){
-            document.getElementsByClassName('preloader')[0].style.visibility = 'hidden';
-            document.getElementsByClassName('preloader')[0].style.opacity = '0';
+        if (document.getElementsByClassName("preloader").length > 0) {
+            document.getElementsByClassName("preloader")[0].style.visibility =
+                "hidden";
+            document.getElementsByClassName("preloader")[0].style.opacity = "0";
         }
     }, 500);
 }
 
-
 preloader();
-
 
 // Tetx-rotate
 var i = 0;
@@ -126,13 +128,9 @@ text_rotate[2] = "Perfect solution for small businesses";
 function changeText() {
     if (document.getElementById("target")) {
         document.getElementById("target").innerHTML = text_rotate[i];
-        i = (i < text_rotate.length - 1) ? i + 1 : 0;
-        setTimeout('changeText()', time);
+        i = i < text_rotate.length - 1 ? i + 1 : 0;
+        setTimeout("changeText()", time);
     }
 }
 
 changeText();
-
-
-
-
