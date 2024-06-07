@@ -25,12 +25,10 @@
 
         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-14">
             <div class="p-6 rounded-lg bg-white">
-                <img src="assets/images/blog-4.jpg" class="rounded-lg" alt="">
+                <img src="assets/images/bg-msm.jpg" class="rounded-lg" alt="">
                 <h2 class="text-xl font-bold mt-5">My Secret Map</h2>
                 <div class="flex items-center gap-3 mt-4">
-                    <div>
-                        <img src="assets/images/user/bg-msm.jpg" class="h-10 w-10 rounded-full" alt="">
-                    </div>
+
                     <div>
                         <h4 class="text-gray-800">Islande, Comores, Réunion,...</h4>
                         <h5 class="text-gray-500">qsfqfqfd</h5>
@@ -53,9 +51,7 @@
                 <img src="assets/images/blog-5.jpg" class="rounded-lg" alt="">
                 <h2 class="text-xl font-bold mt-5">A Leading Global Agency In 15 Years.</h2>
                 <div class="flex items-center gap-3 mt-4">
-                    <div>
-                        <img src="assets/images/user/img-2.jpg" class="h-10 w-10 rounded-full" alt="">
-                    </div>
+
                     <div>
                         <h4 class="text-gray-800">Credon catla</h4>
                         <h5 class="text-gray-500">15-12-2023</h5>
