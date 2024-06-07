@@ -26,12 +26,12 @@
         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-14">
             <div class="p-6 rounded-lg bg-card">
 
-                <h2 class="text-xl font-bold mt-5">My Secret Map</h2>
+                <h2 class="text-xl font-bold mt-5">Site Internet : My Secret Map</h2>
                 <div class="flex items-center gap-3 mt-4">
 
                     <div>
-                        <h4 class="text-gray-800">Islande, Comores, Réunion,...</h4>
-                        <h5 class="text-gray-500">qsfqfqfd</h5>
+                        <h4 class="text-gray-800">Chaque année de nouvelles destinations</h4>
+                        <h5 class="text-gray-500">Islande, Comores, Réunion,...</h5>
                     </div>
                 </div>
                 <img src="/web/images/bg-msm.jpg" class="rounded-lg" alt="">
