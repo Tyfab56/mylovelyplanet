@@ -16,7 +16,7 @@
             </div>
         </div>
 </section>
-<section class="relative py-28 bg-cover bg-no-repeat" style="background-image: url({{ asset('lugada/images/blog-bg-1.png') }})">
+<section class="relative py-28 bg-cover bg-no-repeat" style="background-image:{{ asset('lugada/images/blog-bg-1.png') }}">
     <div class="container">
         <div class="max-w-md  mx-auto text-center">
             <h2 class="text-3xl font-bold">Blog Section 2</h2>
