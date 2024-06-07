@@ -30,7 +30,7 @@
                 <div class="flex items-center gap-3 mt-3 mb-3">
 
                     <div>
-                        <h5 class="text-gray-800">Chaque année de nouvelles destinations</h5>
+                        <h5 class="text-gray-500">Chaque année de nouvelles destinations</h5>
                         <h5 class="text-gray-500">Islande, Comores, Réunion,...</h5>
                     </div>
                 </div>
@@ -48,20 +48,24 @@
                 </div>
             </div>
 
-            <div class="p-6 rounded-lg bg-white">
-                <img src="assets/images/blog-5.jpg" class="rounded-lg" alt="">
-                <h2 class="text-xl font-bold mt-5">A Leading Global Agency In 15 Years.</h2>
-                <div class="flex items-center gap-3 mt-4">
+
+        </div>
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-14">
+            <div class="p-6 rounded-lg bg-card">
+
+                <h2 class="text-xl font-bold">Site Internet : My Secret Map</h2>
+                <div class="flex items-center gap-3 mt-3 mb-3">
 
                     <div>
-                        <h4 class="text-gray-800">Credon catla</h4>
-                        <h5 class="text-gray-500">15-12-2023</h5>
+                        <h5 class="text-gray-500">Chaque année de nouvelles destinations</h5>
+                        <h5 class="text-gray-500">Islande, Comores, Réunion,...</h5>
                     </div>
                 </div>
-                <p class="text-base font-semibold text-gray-500 mt-5">Lorem ipsum dolor sit amet consectetur Eius iusto debitis doloremque nulla reiciendis illum.</p>
+                <img src="/web/images/bg-msm.jpg" class="rounded-lg" alt="">
+                <p class="text-base font-semibold text-gray-500 mt-2">Un outil pour découvrir les plus beaux sites et activités d'une selection de destinations</p>
                 <div class="inline-block mt-6">
-                    <a href="#" class="py-2 px-6 rounded-full flex items-center gap-2 font-medium text-white bg-blue-500/90 hover:bg-blue-500 transition-all duration-500">
-                        Read more
+                    <a href="https://www.mysecretmap.com" target="_blank" class="py-2 px-6 rounded-full flex items-center gap-2 font-medium text-white bg-blue-500/90 hover:bg-blue-500 transition-all duration-500">
+                        Voir le site
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-white">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -71,22 +75,24 @@
                 </div>
             </div>
 
-            <div class="p-6 rounded-lg bg-white">
-                <img src="assets/images/blog-6.jpg" class="rounded-lg" alt="">
-                <h2 class="text-xl font-bold mt-5">Startup Leading Global Agency In 5 Years.</h2>
-                <div class="flex items-center gap-3 mt-4">
+
+        </div>
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-14">
+            <div class="p-6 rounded-lg bg-card">
+
+                <h2 class="text-xl font-bold">Site Internet : My Secret Map</h2>
+                <div class="flex items-center gap-3 mt-3 mb-3">
+
                     <div>
-                        <img src="assets/images/user/img-3.jpg" class="h-10 w-10 rounded-full" alt="">
-                    </div>
-                    <div>
-                        <h4 class="text-gray-800">Jhon catla</h4>
-                        <h5 class="text-gray-500">15-9-2023</h5>
+                        <h5 class="text-gray-500">Chaque année de nouvelles destinations</h5>
+                        <h5 class="text-gray-500">Islande, Comores, Réunion,...</h5>
                     </div>
                 </div>
-                <p class="text-base font-semibold text-gray-500 mt-5">Lorem ipsum dolor sit amet consectetur Eius iusto debitis doloremque nulla reiciendis illum.</p>
+                <img src="/web/images/bg-msm.jpg" class="rounded-lg" alt="">
+                <p class="text-base font-semibold text-gray-500 mt-2">Un outil pour découvrir les plus beaux sites et activités d'une selection de destinations</p>
                 <div class="inline-block mt-6">
-                    <a href="#" class="py-2 px-6 rounded-full flex items-center gap-2 font-medium text-white bg-blue-500/90 hover:bg-blue-500 transition-all duration-500">
-                        Read more
+                    <a href="https://www.mysecretmap.com" target="_blank" class="py-2 px-6 rounded-full flex items-center gap-2 font-medium text-white bg-blue-500/90 hover:bg-blue-500 transition-all duration-500">
+                        Voir le site
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-white">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -95,6 +101,8 @@
                     </a>
                 </div>
             </div>
+
+
         </div>
     </div><!-- end container -->
 </section>
