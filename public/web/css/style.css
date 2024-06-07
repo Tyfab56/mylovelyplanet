@@ -1422,3 +1422,6 @@ figure.custom-blockquote {
     padding-top: 7rem;
     padding-bottom: 7rem;
 }
+.bg-card {
+    background-color: #9cb6dd;
+}
