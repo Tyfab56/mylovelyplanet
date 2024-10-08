@@ -1,0 +1,1 @@
+{"status":"subscribe","msg":"Login successful","id":1,"lang_default":"en","last_vote_date":"2024-10-08","daily_votes_remaining":7}

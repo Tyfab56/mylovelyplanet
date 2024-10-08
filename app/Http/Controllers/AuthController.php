@@ -15,6 +15,11 @@ class AuthController extends Controller
 {
     public function registerLogin(Request $request)
     {
+
+        // Handle preflight request for CORS
+        if ($request->isMethod('OPTIONS')) {
+            return response()->json([], 200, ['Access-Control-Allow-Origin' => '*']);
+        }
         // Validation rules
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
@@ -35,8 +40,7 @@ class AuthController extends Controller
         if (!$user) {
             // Register user
             $user = ComoresUser::create([
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
+
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
                 'lang_default' => $request->input('lang_default', 'en'), // Default language
@@ -44,9 +48,17 @@ class AuthController extends Controller
             ]);
 
             // Send verification email (assuming Mail configuration is set)
-            Mail::to($user->email)->send(new VerifyEmail($user));
+            // Mail::to($user->email)->send(new VerifyEmail($user));
 
-            return response()->json(['status' => 'subscribe', 'msg' => 'Verification email sent.']);
+            return response()->json([
+                'status' => 'subscribe',
+                'msg' => 'Verification email sent.',
+                'email' => $user->email,
+                'id' => $user->id,
+                'lang_default' => $user->lang_default,
+                'last_vote_date' => $user->last_vote_date,
+                'daily_votes_remaining' => $user->daily_votes_remaining
+            ]);
         } else {
             // Login logic
             if (Hash::check($request->password, $user->password)) {
@@ -59,8 +71,9 @@ class AuthController extends Controller
                 }
 
                 return response()->json([
-                    'status' => 'subscribe',
+                    'status' => 'login',
                     'msg' => 'Login successful',
+                    'email' => $user->email,
                     'id' => $user->id,
                     'lang_default' => $user->lang_default,
                     'last_vote_date' => $user->last_vote_date,
