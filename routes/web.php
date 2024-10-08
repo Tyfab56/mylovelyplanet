@@ -18,4 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/pwa/{any}', function () {
+    return view('pwa.index');  // Make sure this points to your PWA's index file
+})->where('any', '.*');
+
 Route::get('/tostore', [StoreController::class, 'tostore'])->name('tostore');
