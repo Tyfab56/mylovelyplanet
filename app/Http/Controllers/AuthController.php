@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ComoresUser;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\ComoresUser;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\VerifyEmail;
+
 use Carbon\Carbon;
 
 class AuthController extends Controller
@@ -16,14 +18,15 @@ class AuthController extends Controller
         // Validation rules
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
-            'password' => 'required|string|min:6',
-            'first_name' => 'required_if:register,true|string',
-            'last_name' => 'required_if:register,true|string',
-            'accepts_communication' => 'required_if:register,true|boolean'
+            'password' => 'required|min:6',
+            'accepts_communication' => 'boolean',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['status' => 'nosubscribe', 'msg' => $validator->errors()], 400);
+            return response()->json([
+                'status' => 'nosubscribe',
+                'msg' => 'Invalid input',
+            ]);
         }
 
         // Check if user already exists
