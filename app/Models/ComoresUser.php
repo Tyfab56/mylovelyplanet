@@ -1,3 +1,5 @@
+<?php
+
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -5,25 +7,25 @@ use Illuminate\Notifications\Notifiable;
 
 class ComoresUser extends Authenticatable
 {
-use Notifiable;
+    use Notifiable;
 
-// Specify the table associated with this model
-protected $table = 'comoresusers';
+    // Specify the table associated with this model
+    protected $table = 'comoresusers';
 
-protected $fillable = [
-'first_name',
-'last_name',
-'email',
-'password',
-'lang_default',
-'email_verif',
-'last_vote_date',
-'daily_votes_remaining',
-'votes_per_day',
-'day_votes_consecutif',
-'votes_max',
-'accepts_communication'
-];
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'lang_default',
+        'email_verif',
+        'last_vote_date',
+        'daily_votes_remaining',
+        'votes_per_day',
+        'day_votes_consecutif',
+        'votes_max',
+        'accepts_communication'
+    ];
 
-protected $hidden = ['password'];
+    protected $hidden = ['password'];
 }
