@@ -57,6 +57,8 @@ class AuthController extends Controller
                 'id' => $user->id,
                 'lang_default' => $user->lang_default,
                 'last_vote_date' => $user->last_vote_date,
+                'votes_totaux' => $user->votes_totaux,
+                'votes_suivis' => $user->votes_suivis,
                 'daily_votes_remaining' => $user->daily_votes_remaining
             ]);
         } else {
@@ -77,10 +79,12 @@ class AuthController extends Controller
                     'id' => $user->id,
                     'lang_default' => $user->lang_default,
                     'last_vote_date' => $user->last_vote_date,
+                    'votes_totaux' => $user->votes_totaux,
+                    'votes_suivis' => $user->votes_suivis,
                     'daily_votes_remaining' => $user->daily_votes_remaining
                 ]);
             } else {
-                return response()->json(['status' => 'nosubscribe', 'msg' => 'Incorrect credentials'], 401);
+                return response()->json(['status' => 'nosubscribe', 'msg' => 'Incorrect credentials']);
             }
         }
     }
