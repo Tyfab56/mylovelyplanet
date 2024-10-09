@@ -28,4 +28,10 @@ class ComoresUser extends Authenticatable
     ];
 
     protected $hidden = ['password'];
+
+    // Relation avec les votes
+    public function votes()
+    {
+        return $this->hasMany(ComoresVote::class, 'user_id');
+    }
 }

@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
+use App\Http\Controllers\VoteController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/register-login', [AuthController::class, 'registerLogin']);
 Route::get('/verify-email/{token}', [AuthController::class, 'verifyEmail']);
+
+Route::post('/vote', [VoteController::class, 'vote']);
