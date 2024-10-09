@@ -59,7 +59,9 @@ class AuthController extends Controller
                 'last_vote_date' => $user->last_vote_date,
                 'votes_totaux' => $user->votes_totaux,
                 'votes_suivis' => $user->votes_suivis,
-                'daily_votes_remaining' => $user->daily_votes_remaining
+                'daily_votes_remaining' => $user->daily_votes_remaining,
+                'votes_max' => $user->votes_max
+
             ]);
         } else {
             // Login logic
@@ -81,7 +83,8 @@ class AuthController extends Controller
                     'last_vote_date' => $user->last_vote_date,
                     'votes_totaux' => $user->votes_totaux,
                     'votes_suivis' => $user->votes_suivis,
-                    'daily_votes_remaining' => $user->daily_votes_remaining
+                    'daily_votes_remaining' => $user->daily_votes_remaining,
+                    'votes_max' => $user->votes_max
                 ]);
             } else {
                 return response()->json(['status' => 'nosubscribe', 'msg' => 'Incorrect credentials']);
