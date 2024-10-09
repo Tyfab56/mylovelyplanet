@@ -44,6 +44,7 @@ class VoteController extends Controller
 
             // Décrémenter le compteur de votes restants
             $user->daily_votes_remaining--;
+            $user->votes_totaux++;
             $user->save();
 
             return response()->json([
