@@ -57,7 +57,53 @@ class VoteController extends Controller
             return response()->json([
                 'success' => false,
                 'code' => 'VOTE_DENIED_MAX_REACHED',
-            ], 403);
+            ]);
         }
+    }
+
+    public function removeVote(Request $request)
+    {
+        // Supposons que vous recevez l'email ou l'ID de l'utilisateur dans la requête
+        $user = ComoresUser::where('email', $request->input('email'))->first();
+
+        // Vérifier si l'utilisateur existe dans la base de données
+        if (!$user) {
+            return response()->json([
+                'success' => false,
+                'code' => 'USER_NOT_FOUND',
+                'message' => 'Utilisateur non trouvé',
+            ]);
+        }
+
+        // Obtenir la date d'aujourd'hui
+        $today = Carbon::now()->toDateString();
+
+        // Vérifier si un vote existe pour cet utilisateur, ce spot, et qu'il a été fait aujourd'hui
+        $vote = ComoresVote::where('user_id', $user->id)
+            ->where('spot_id', $request->input('spot_id'))
+            ->whereDate('created_at', $today) // Vérifier que le vote a été fait aujourd'hui
+            ->first();
+
+        if (!$vote) {
+            return response()->json([
+                'success' => false,
+                'code' => 'VOTE_NOT_FOUND_OR_NOT_TODAY',
+                'message' => 'Aucun vote trouvé pour aujourd\'hui.',
+            ]);
+        }
+
+        // Supprimer le vote
+        $vote->delete();
+
+        // Incrémenter le compteur de votes restants et décrémenter les votes totaux
+        $user->daily_votes_remaining++;
+        $user->votes_totaux--;
+        $user->save();
+
+        return response()->json([
+            'success' => true,
+            'code' => 'VOTE_REMOVED',
+            'remainingVotes' => $user->daily_votes_remaining, // Nombre de votes restants mis à jour
+        ]);
     }
 }

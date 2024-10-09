@@ -25,3 +25,4 @@ Route::post('/register-login', [AuthController::class, 'registerLogin']);
 Route::get('/verify-email/{token}', [AuthController::class, 'verifyEmail']);
 
 Route::post('/vote', [VoteController::class, 'vote']);
+Route::post('/remove-vote', [VoteController::class, 'removeVote']);
