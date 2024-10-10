@@ -55,6 +55,7 @@ class AuthController extends Controller
             } else {
                 return response()->json(['status' => 'nosubscribe', 'msg' => 'User not found.']);
             }
+        }
         // Check if user already exists
         $user = ComoresUser::where('email', $request->email)->first();
 
