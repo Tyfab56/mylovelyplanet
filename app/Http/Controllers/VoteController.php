@@ -51,6 +51,7 @@ class VoteController extends Controller
                 'success' => true,
                 'code' => 'VOTE_ACCEPTED',
                 'remainingVotes' => $user->daily_votes_remaining, // Nombre de votes restants
+                'votes_totaux' => $user->votes_totaux,
             ], 200);
         } else {
             // Si le nombre de votes maximum est atteint
@@ -104,6 +105,7 @@ class VoteController extends Controller
             'success' => true,
             'code' => 'VOTE_REMOVED',
             'remainingVotes' => $user->daily_votes_remaining, // Nombre de votes restants mis à jour
+            'votes_totaux' => $user->votes_totaux,
         ]);
     }
 }
