@@ -39,6 +39,12 @@ class AuthController extends Controller
             $user = ComoresUser::where('email', $request->input('email'))->first();
             if ($user) {
                 // Return updated user data, skipping password validation
+                $today = Carbon::today();
+                if ($user->last_vote_date != $today->toDateString()) {
+                    $user->daily_votes_remaining = $user->votes_max;
+                    $user->last_vote_date = $today->toDateString();
+                    $user->save();
+                }
                 return response()->json([
                     'status' => 'login',
                     'msg' => 'Login successful',
