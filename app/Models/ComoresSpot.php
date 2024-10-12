@@ -9,7 +9,7 @@ class ComoresSpot extends Model
 {
     use HasFactory;
 
-    protected $table = 'comores_spots'; // Nom de la table
+    protected $table = 'comoresspots'; // Nom de la table
     protected $fillable = ['name', 'ile', 'description', 'image', 'lang', 'link'];
 
     // Si vous voulez utiliser created_at/updated_at, sinon, vous pouvez les désactiver
