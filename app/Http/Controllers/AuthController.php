@@ -24,7 +24,6 @@ class AuthController extends Controller
         // Validation rules
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
-            'accepts_communication' => 'boolean',
         ]);
 
         if ($validator->fails()) {
