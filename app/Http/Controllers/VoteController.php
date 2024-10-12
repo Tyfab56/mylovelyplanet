@@ -115,6 +115,8 @@ class VoteController extends Controller
     {
         // Récupérer l'email de l'utilisateur à partir de la requête
         $email = $request->input('email');
+        // Récupérer la langue de la requête, ou utiliser la langue par défaut de l'utilisateur
+        $lang = $request->input('lang');
 
         // Vérifier que l'utilisateur existe (dans ComoresUsers par exemple)
         $user = \App\Models\ComoresUser::where('email', $email)->first();
@@ -133,16 +135,23 @@ class VoteController extends Controller
             ->get();
 
         // Créer une collection pour stocker les infos des spots
-        $leaderboard = $votes->map(function ($vote) {
-            $spot = ComoresSpot::find($vote->spot_id);
-            return [
-                'spot_id' => $spot->id,
-                'spot_name' => $spot->name,
-                'spot_description' => $spot->description,
-                'spot_image' => $spot->image,
-                'total_votes' => $vote->total_votes,
-            ];
-        });
+        $leaderboard = $votes->map(function ($vote)  use ($lang) {
+            $spot = ComoresSpot::where('id', $vote->spot_id)
+                ->where('lang', $lang)
+                ->first();
+            if ($spot) {
+                return [
+                    'spot_id' => $spot->id,
+                    'spot_name' => $spot->name,
+                    'spot_ile' => $spot->ile,
+                    'spot_description' => $spot->description,
+                    'spot_image' => $spot->image,
+                    'total_votes' => $vote->total_votes,
+                ];
+            }
+
+            return null;
+        })->filter();
 
         // Retourner le classement sous forme de JSON
         return response()->json([
