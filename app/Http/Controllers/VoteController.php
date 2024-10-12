@@ -115,6 +115,7 @@ class VoteController extends Controller
     {
         // Récupérer l'utilisateur via l'email fourni dans la requête
         $user = ComoresUser::where('email', $request->input('email'))->first();
+        $lang = $request->input('lang');
 
         if (!$user) {
             // Return early if the user is not found
