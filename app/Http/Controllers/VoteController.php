@@ -113,36 +113,93 @@ class VoteController extends Controller
 
     public function getUserLeaderboard(Request $request)
     {
-        // Récupérer l'email de l'utilisateur à partir de la requête
-        $email = $request->input('email');
-        // Récupérer la langue de la requête, ou utiliser la langue par défaut de l'utilisateur
-        $lang = $request->input('lang');
+        // Récupérer l'utilisateur via l'email fourni dans la requête
+        $user = ComoresUser::where('email', $request->input('email'))->first();
 
-        // Vérifier que l'utilisateur existe (dans ComoresUsers par exemple)
-        $user = \App\Models\ComoresUser::where('email', $email)->first();
         if (!$user) {
+            // Return early if the user is not found
             return response()->json([
                 'success' => false,
                 'message' => 'Utilisateur non trouvé',
-            ]);
+            ], 404);
         }
 
-        // Récupérer les votes de l'utilisateur et les grouper par spot
+        // 1. Récupérer les 7 spots les plus votés globalement
+        $globalTop7 = ComoresVote::select('spot_id', DB::raw('count(*) as total_votes'))
+            ->groupBy('spot_id')
+            ->orderBy('total_votes', 'desc')
+            ->limit(7)
+            ->pluck('spot_id')
+            ->toArray(); // Tableau des 7 spots les plus votés
+
+        // 2. Récupérer les 7 spots les plus votés de l'utilisateur
+        $userTop7 = ComoresVote::select('spot_id', DB::raw('count(*) as total_votes'))
+            ->where('user_id', $user->id)
+            ->groupBy('spot_id')
+            ->orderBy('total_votes', 'desc')
+            ->limit(7)
+            ->pluck('spot_id')
+            ->toArray(); // Tableau des 7 spots de l'utilisateur
+
+        if (empty($userTop7)) {
+            // Return early if the user has no votes
+            return response()->json([
+                'success' => false,
+                'message' => 'L\'utilisateur n\'a pas de votes enregistrés.',
+            ], 200);
+        }
+
+        // 3. Calculer le score de l'utilisateur en comparant les spots
+        $score = 0;
+
+        foreach ($userTop7 as $index => $userSpotId) {
+            if (in_array($userSpotId, $globalTop7)) {
+                if ($globalTop7[$index] === $userSpotId) {
+                    $score += 3; // 3 points pour un spot à la bonne position
+                } else {
+                    $score += 1; // 1 point pour un spot dans le top 7 mais pas à la bonne position
+                }
+            }
+        }
+
+        // 4. Récupérer tous les utilisateurs classés par votes totaux
+        $allUsers = ComoresUser::select('id', 'votes_totaux')
+            ->orderBy('votes_totaux', 'desc')
+            ->get();
+
+        // 5. Calculer la position globale de l'utilisateur
+        $userRank = $allUsers->search(function ($u) use ($user) {
+            return $u->id === $user->id;
+        }) + 1; // +1 pour commencer à 1 au lieu de 0
+
+        // 6. Déterminer la tranche de classement de l'utilisateur
+        $rankingCategory = '';
+        if ($userRank <= 50) {
+            $rankingCategory = 'Top 50';
+        } elseif ($userRank <= 100) {
+            $rankingCategory = 'Top 100';
+        } elseif ($userRank <= 1000) {
+            $rankingCategory = 'Top 1000';
+        } else {
+            $rankingCategory = 'Beyond Top 1000';
+        }
+
+        // 7. Récupérer le leaderboard de l'utilisateur
         $votes = ComoresVote::select('spot_id', DB::raw('count(*) as total_votes'))
             ->where('user_id', $user->id)
             ->groupBy('spot_id')
             ->orderBy('total_votes', 'desc')
             ->get();
 
-        // Créer une collection pour stocker les infos des spots
-        $leaderboard = $votes->map(function ($vote)  use ($lang) {
+        $leaderboard = $votes->map(function ($vote) use ($lang) {
             $spot = ComoresSpot::where('id', $vote->spot_id)
                 ->where('lang', $lang)
                 ->first();
+
             if ($spot) {
                 return [
                     'spot_id' => $spot->id,
-                    'spot_name' => $spot->name,
+                    'spot_name' => $spot->ile . ' - ' . $spot->name,
                     'spot_ile' => $spot->ile,
                     'spot_description' => $spot->description,
                     'spot_image' => $spot->image,
@@ -153,10 +210,13 @@ class VoteController extends Controller
             return null;
         })->filter();
 
-        // Retourner le classement sous forme de JSON
+        // 8. Retourner le classement de l'utilisateur avec son score et sa catégorie de classement
         return response()->json([
             'success' => true,
             'leaderboard' => $leaderboard,
+            'user_score' => $score, // Score calculé
+            'user_rank' => $userRank, // Rang global de l'utilisateur
+            'ranking_category' => $rankingCategory, // Tranche du classement de l'utilisateur
         ], 200);
     }
 }
