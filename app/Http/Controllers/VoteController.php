@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ComoresVote;
 use App\Models\ComoresUser;
+use App\Models\ComoresSpot;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class VoteController extends Controller
@@ -107,5 +109,45 @@ class VoteController extends Controller
             'remainingVotes' => $user->daily_votes_remaining, // Nombre de votes restants mis à jour
             'votes_totaux' => $user->votes_totaux,
         ]);
+    }
+
+    public function getUserLeaderboard(Request $request)
+    {
+        // Récupérer l'email de l'utilisateur à partir de la requête
+        $email = $request->input('email');
+
+        // Vérifier que l'utilisateur existe (dans ComoresUsers par exemple)
+        $user = \App\Models\ComoresUser::where('email', $email)->first();
+        if (!$user) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Utilisateur non trouvé',
+            ]);
+        }
+
+        // Récupérer les votes de l'utilisateur et les grouper par spot
+        $votes = ComoresVote::select('spot_id', DB::raw('count(*) as total_votes'))
+            ->where('user_id', $user->id)
+            ->groupBy('spot_id')
+            ->orderBy('total_votes', 'desc')
+            ->get();
+
+        // Créer une collection pour stocker les infos des spots
+        $leaderboard = $votes->map(function ($vote) {
+            $spot = ComoresSpot::find($vote->spot_id);
+            return [
+                'spot_id' => $spot->id,
+                'spot_name' => $spot->name,
+                'spot_description' => $spot->description,
+                'spot_image' => $spot->image,
+                'total_votes' => $vote->total_votes,
+            ];
+        });
+
+        // Retourner le classement sous forme de JSON
+        return response()->json([
+            'success' => true,
+            'leaderboard' => $leaderboard,
+        ], 200);
     }
 }

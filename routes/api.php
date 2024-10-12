@@ -26,3 +26,4 @@ Route::get('/verify-email/{token}', [AuthController::class, 'verifyEmail']);
 
 Route::post('/vote', [VoteController::class, 'vote']);
 Route::post('/remove-vote', [VoteController::class, 'removeVote']);
+Route::get('/leaderboard', [VoteController::class, 'getUserLeaderboard']);
