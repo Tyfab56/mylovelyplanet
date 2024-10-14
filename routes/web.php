@@ -22,4 +22,8 @@ Route::get('/pwa/{any}', function () {
     return view('pwa.index');  // Make sure this points to your PWA's index file
 })->where('any', '.*');
 
+Route::get('/audioguide_iceland/{any}', function () {
+    return view('index'); // Assurez-vous que 'index' est la vue principale de la PWA.
+})->where('any', '.*');
+
 Route::get('/tostore', [StoreController::class, 'tostore'])->name('tostore');
