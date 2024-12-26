@@ -29,5 +29,5 @@ Route::get('/audioguide_iceland/{any}', function () {
 Route::get('/tostore', [StoreController::class, 'tostore'])->name('tostore');
 
 Route::get('/mysecretmap', function () {
-    return view('ot');
+    return view('mysecretmap');
 });
