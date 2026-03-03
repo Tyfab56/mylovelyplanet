@@ -15,7 +15,15 @@ use App\Http\Controllers\StoreController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // Redirige vers la locale par défaut (config('app.locale'))
+    $locale = config('app.locale', 'en');
+    return redirect($locale . '/');
+});
+
+Route::group(['prefix' => '{lang}', 'where' => ['lang' => 'en|fr']], function () {
+    Route::get('/', function () {
+        return view('welcome');
+    })->name('home');
 });
 
 Route::get('/pwa/{any}', function () {

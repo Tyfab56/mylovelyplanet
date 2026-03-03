@@ -16,7 +16,7 @@
 
         body {
             line-height: 1.6;
-            color: #333;
+            color: #1A2B3C;
         }
 
         /* HEADER & NAV */
@@ -25,14 +25,14 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: #004080;
-            /* Couleur principale */
+            background: #1A2B3C;
             color: #fff;
             padding: 1rem;
             z-index: 999;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            box-shadow: 0 10px 30px -20px rgba(0,0,0,0.5);
         }
 
         .logo {
@@ -54,8 +54,7 @@
         }
 
         nav ul li a:hover {
-            color: #ffcc00;
-            /* Couleur d'accent */
+            color: #FFC107;
         }
 
         /* ESPACEMENT DU CONTENU PRINCIPAL (pour compenser le header fixe) */
@@ -94,17 +93,18 @@
         }
 
         .btn-primary {
-            background: #ffcc00;
-            color: #333;
+            background: #FFC107;
+            color: #1A2B3C;
             padding: 0.75rem 1.2rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
+            box-shadow: 0 10px 26px -16px rgba(0,0,0,0.35);
         }
 
         .btn-primary:hover {
-            background: #ffdd33;
+            background: #e6ad05;
         }
 
         /* SERVICES SECTION */
@@ -148,11 +148,12 @@
 
         /* SECTION CONTACT (CTA) */
         .contact-cta {
-            background: #004080;
+            background: #1A2B3C;
             color: #fff;
             text-align: center;
             border-radius: 6px;
             padding: 2rem 1rem;
+            box-shadow: 0 16px 36px -20px rgba(0,0,0,0.6);
         }
 
         .contact-cta p {
@@ -160,8 +161,8 @@
         }
 
         .btn-contact {
-            background: #ffcc00;
-            color: #333;
+            background: #FFC107;
+            color: #1A2B3C;
             padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 4px;
@@ -170,7 +171,7 @@
         }
 
         .btn-contact:hover {
-            background: #ffdd33;
+            background: #e6ad05;
         }
 
         /* FOOTER */
